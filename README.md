@@ -1,73 +1,109 @@
-# Welcome to your Lovable project
 
-## Project info
+# ExpenseTracker
 
-**URL**: https://lovable.dev/projects/4efcd650-73fd-4839-bedf-f9a8a6e2ab70
+ExpenseTracker is a modern, cloud-powered application to manage and split expenses within groups. Built with **Lovable Cloud** for authentication, database, and serverless functions, ExpenseTracker allows users to track expenses, manage groups, and settle payments seamlessly.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- 🔐 **Authentication:** Signup/login with automatic profile creation.  
+- 📊 **Dashboard:** Real-time expense tracking and statistics.  
+- 💰 **Expense Management:** Add and split expenses across group members.  
+- 👥 **Group Management:** Create groups and invite members via email.  
+- 🤝 **Settlement Tracker:** Keep track of who owes what.  
+- 🎨 **Design:** Modern teal and coral gradient design with smooth animations.  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4efcd650-73fd-4839-bedf-f9a8a6e2ab70) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Database Schema
 
-**Use your preferred IDE**
+**Profiles Table:** Stores user information.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Groups Table:** Stores group details created by users.  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Group Members Table:** Tracks membership of users in groups.  
 
-Follow these steps:
+**Expenses Table:** Stores individual expenses within groups.  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Expense Splits Table:** Tracks how expenses are split and settled among members.  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+All tables have **row-level security (RLS)** enabled with policies to ensure users can only access authorized data.  
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Backend
+
+The backend is powered by **Lovable Cloud**:
+
+- Database: PostgreSQL with RLS policies
+- Authentication: Auto-profile creation on signup
+- Serverless functions: Custom logic for expense management
+
+A trigger automatically creates a profile for every new user signing up.
+
+---
+
+## Getting Started
+
+1. **Clone the repository:**
+
+```bash
+git clone <repository-url>
+cd splitwise-reimagined
+````
+
+2. **Install dependencies:**
+
+```bash
+bun install
 ```
 
-**Edit a file directly in GitHub**
+3. **Setup environment variables:**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file with your Lovable Cloud project credentials.
 
-**Use GitHub Codespaces**
+4. **Run the app locally:**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+bun run dev
+```
 
-## What technologies are used for this project?
+5. **Open in browser:**
 
-This project is built with:
+Visit `http://localhost:3000` to use ExpenseTracker.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## Usage
 
-Simply open [Lovable](https://lovable.dev/projects/4efcd650-73fd-4839-bedf-f9a8a6e2ab70) and click on Share -> Publish.
+1. Sign up to create an account.
+2. Create a group and add members by email.
+3. Add expenses and assign splits to group members.
+4. Track balances and settlements in real-time on the dashboard.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Tech Stack
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* Frontend: HTML, TypeScript, Tailwind CSS, Vite
+* Backend: Lovable Cloud (PostgreSQL, Authentication, Serverless functions)
+* Security: Row-level security (RLS) for database tables
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## License
+
+This project is for educational purposes and can be modified as needed.
+
+---
+
+## Author
+
+Sara Saman
+
+```
+
+---
+
+```
